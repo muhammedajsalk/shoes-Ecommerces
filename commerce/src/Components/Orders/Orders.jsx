@@ -14,7 +14,7 @@ function Orders() {
 
     useEffect(() => {
         setDatas([]);
-        axios.get(`http://localhost:5000/users/${userId}`)
+        axios.get(`https://shoes-ecommerce-9ems.onrender.com/users/${userId}`)
             .then((response) => {
                 const fetchedorders=Array.isArray(response.data.orders) ? response.data.orders : []
                 setDatas(fetchedorders)
@@ -26,7 +26,7 @@ function Orders() {
     }, [userId]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/shoes`)
+        axios.get(`https://shoes-ecommerce-9ems.onrender.com/shoes`)
             .then((response) => setShoesData(response.data || []))
             .catch(err => toast.error(`error fetching shoes:${err}`));
     }, []);

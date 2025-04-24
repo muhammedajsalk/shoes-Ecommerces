@@ -31,7 +31,7 @@ function Register() {
       initialValues,
       validationSchema: signupSceama,
       onSubmit: (values) => {
-        axios.post("http://localhost:5000/users", values)
+        axios.post("https://shoes-ecommerce-9ems.onrender.com/users", values)
           .then(response => {
             navigate("/login")
           })

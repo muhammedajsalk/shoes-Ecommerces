@@ -10,7 +10,7 @@ const UsersChart = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/users")
+      .get("https://shoes-ecommerce-9ems.onrender.com/users")
       .then((response) => setFetchData(response.data))
       .catch((err) => toast.error("fetching users error found",err));
   }, []);

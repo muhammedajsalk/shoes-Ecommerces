@@ -15,7 +15,7 @@ function Login() {
   }
 
   useEffect(() => {
-    axios.get("http://localhost:5000/users")
+    axios.get("https://shoes-ecommerce-9ems.onrender.com/users")
       .then(responsive => setDatass(responsive.data))
       .catch(err => toast.error(`error fetch found ${err.message}`))
   }, [])

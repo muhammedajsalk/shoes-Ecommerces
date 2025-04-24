@@ -31,7 +31,7 @@ function AddProduct() {
          initialValues,
          validationSchema:ProductAddSchema,
          onSubmit:(values)=>{
-            axios.post("http://localhost:5000/shoes",values)
+            axios.post("https://shoes-ecommerce-9ems.onrender.com/shoes",values)
             .then(response=>{
                 toast.success("succefully posted")
                 resetForm()

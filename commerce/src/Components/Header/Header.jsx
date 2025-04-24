@@ -15,7 +15,7 @@ function Header(props) {
 
     useEffect(() => {
         if (userId) {
-            axios.get(`http://localhost:5000/users/${userId}`)
+            axios.get(`https://shoes-ecommerce-9ems.onrender.com/users/${userId}`)
                 .then(response =>{
                     setDatas(response.data) 
                     props.setQuantities(response.data.cart.length)

@@ -11,7 +11,7 @@ function UserProfile() {
     }
     const navigate=useNavigate()
     useEffect(()=>{
-       axios.get(`http://localhost:5000/users/${userId}`)
+       axios.get(`https://shoes-ecommerce-9ems.onrender.com/users/${userId}`)
        .then(responsive=>setUser(responsive.data))
        .catch(err=>console.log("error found",err))
     },[])

@@ -10,7 +10,7 @@ const ProductCountChart = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/shoes")
+      .get("https://shoes-ecommerce-9ems.onrender.com/shoes")
       .then((response) => setFetchData(response.data))
       .catch((err) => toast.error("fetching shoes error",err));
   }, []);

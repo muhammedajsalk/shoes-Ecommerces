@@ -7,7 +7,7 @@ function OrdersChart() {
   const [fetchData, setFetchData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/users")
+      .get("https://shoes-ecommerce-9ems.onrender.com/users")
       .then((response) => setFetchData(response.data))
       .catch((err) => toast.error("users data fetch error found",err));
   }, []);

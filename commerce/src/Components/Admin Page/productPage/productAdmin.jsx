@@ -30,7 +30,7 @@ function ProductAdmin() {
 
 
     useEffect(() => {
-        axios.get("http://localhost:5000/shoes")
+        axios.get("https://shoes-ecommerce-9ems.onrender.com/shoes")
             .then(responsive => setDatas(responsive.data))
             .catch(err => toast.error("fetching data found error", err))
     }, [FilterData])
@@ -47,7 +47,7 @@ function ProductAdmin() {
     }
 
     const DeleteProduct = useCallback((id) => {
-        axios.delete(`http://localhost:5000/shoes/${id}`)
+        axios.delete(`https://shoes-ecommerce-9ems.onrender.com/shoes/${id}`)
             .then(responsive => toast.success("succefully deleted"))
             .catch(err => toast.error("delete not working".err))
     }, [FilterData])

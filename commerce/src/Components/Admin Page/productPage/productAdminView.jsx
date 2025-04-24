@@ -20,7 +20,7 @@ function ProductAdminView() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/shoes/${shoesId}`)
+        axios.get(`https://shoes-ecommerce-9ems.onrender.com/shoes/${shoesId}`)
             .then(responsive => setProduct(responsive.data))
             .catch(err => toast.error(`erroor found:${err.message}`))
     }, [shoesId])

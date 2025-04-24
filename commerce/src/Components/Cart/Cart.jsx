@@ -17,7 +17,7 @@ function Cart() {
     }
     
     useEffect(() => {
-        axios.get(`http://localhost:5000/users/${userId}`)
+        axios.get(`https://shoes-ecommerce-9ems.onrender.com/users/${userId}`)
             .then(response => {
                 setCart(response.data.cart)
                 setCartQuatities(response.data.cart.length)
@@ -31,7 +31,7 @@ function Cart() {
             const fetchProductDetails = async () => {
                 try {
                     const productPromises = cart.map(itemId =>
-                        axios.get(`http://localhost:5000/shoes/${itemId}`)
+                        axios.get(`https://shoes-ecommerce-9ems.onrender.com/shoes/${itemId}`)
                     );
                     const productResponses = await Promise.all(productPromises);
                     const products = productResponses.map(response => response.data);
@@ -82,7 +82,7 @@ function Cart() {
         const updatedCart = cart.filter((itemId) => itemId !== id);
         setCart(updatedCart);
         setCartQuatities(cart.length-1)
-        axios.patch(`http://localhost:5000/users/${userId}`, { cart: updatedCart })
+        axios.patch(`https://shoes-ecommerce-9ems.onrender.com/users/${userId}`, { cart: updatedCart })
             .catch(err => toast.error("Error: updated cart", err));
     },[cart, userId])
 

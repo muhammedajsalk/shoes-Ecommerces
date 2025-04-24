@@ -30,7 +30,7 @@ function AllProducts() {
 
     const navigate = useNavigate();
     useEffect(() => {
-        axios.get("http://localhost:5000/shoes")
+        axios.get("https://shoes-ecommerce-9ems.onrender.com/shoes")
             .then(response => {
                 const filtered = data ? response.data.filter(item => item.category === data) : response.data;
                 setProducts(filtered);

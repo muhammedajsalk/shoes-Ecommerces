@@ -13,7 +13,7 @@ function ProductDetails() {
     const [product, setProduct] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/shoes/${productId}`)
+        axios.get(`https://shoes-ecommerce-9ems.onrender.com/shoes/${productId}`)
             .then(responsive => setProduct(responsive.data))
             .catch(err => toast.error(`erroor found:${err.message}`))
     }, [])
@@ -32,7 +32,7 @@ function ProductDetails() {
         }
 
         try {
-            const response = await axios.get(`http://localhost:5000/users/${userId}`);
+            const response = await axios.get(`https://shoes-ecommerce-9ems.onrender.com/users/${userId}`);
             const existingCart = response.data.cart || [];
             setCartQuatities((prev) => prev + 1)
             if (existingCart.includes(id)) {
@@ -40,7 +40,7 @@ function ProductDetails() {
                 return;
             }
             const updatedCart = [...existingCart, id];
-            await axios.patch(`http://localhost:5000/users/${userId}`, { cart: updatedCart });
+            await axios.patch(`https://shoes-ecommerce-9ems.onrender.com/users/${userId}`, { cart: updatedCart });
 
             setCartId(updatedCart);
             toast.success("item added to cart successfully");

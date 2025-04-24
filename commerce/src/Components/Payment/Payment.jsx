@@ -53,7 +53,7 @@ function Payment() {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/users/${userId}`)
+        axios.get(`https://shoes-ecommerce-9ems.onrender.com/users/${userId}`)
             .then((responsive) => {
                 setState(responsive.data.cart)
                 setFormerOrder(responsive.data.orders)
@@ -97,7 +97,7 @@ function Payment() {
                 };
                 const updatedOrders = Array.isArray(formerOrder) ? [...formerOrder, orderDetails] : [orderDetails];
 
-                axios.patch(`http://localhost:5000/users/${userId}`, { orders: updatedOrders,cart: locationdata === "buynow" ? formercartitems : []})
+                axios.patch(`https://shoes-ecommerce-9ems.onrender.com/users/${userId}`, { orders: updatedOrders,cart: locationdata === "buynow" ? formercartitems : []})
                     .then((response) => {
                         showSuccessToast()
                         resetForm()

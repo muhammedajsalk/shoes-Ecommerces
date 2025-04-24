@@ -20,13 +20,13 @@ function ProductAdminEdit() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/shoes/${shoesId}`)
+        axios.get(`https://shoes-ecommerce-9ems.onrender.com/shoes/${shoesId}`)
             .then(responsive => setProduct(responsive.data))
             .catch(err => toast.error("fetching issue"))
     }, [shoesId])
 
     const buttonClick=useCallback(()=>{
-        axios.patch(`http://localhost:5000/shoes/${shoesId}`,product)
+        axios.patch(`https://shoes-ecommerce-9ems.onrender.com/shoes/${shoesId}`,product)
         .then(response=>toast.success("succefully edited"))
         .catch(err=>toast.error("error found"))
         navigate("/admin/product_admin")

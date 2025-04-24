@@ -20,7 +20,7 @@ function UserPage() {
     const [search, setSearch] = useState("")
 
     useEffect(() => {
-        axios.get("http://localhost:5000/users")
+        axios.get("https://shoes-ecommerce-9ems.onrender.com/users")
             .then(response => setUsers(response.data))
             .catch(err => toast.error("users fetched issue", err));
     }, []);
@@ -33,7 +33,7 @@ function UserPage() {
 
 
     const blockClicked = useCallback((id) => {
-        axios.patch(`http://localhost:5000/users/${id}`, { isActive: false })
+        axios.patch(`https://shoes-ecommerce-9ems.onrender.com/users/${id}`, { isActive: false })
             .then(() => {
                 toast.success("succefully blocked")
                 setUsers(prev => prev.map(user => user.id === id ? { ...user, isActive: false } : user));
@@ -43,7 +43,7 @@ function UserPage() {
 
 
     const unBlockClicked = useCallback((id) => {
-        axios.patch(`http://localhost:5000/users/${id}`, { isActive: true })
+        axios.patch(`https://shoes-ecommerce-9ems.onrender.com/users/${id}`, { isActive: true })
             .then(() => {
                 toast.success("succefully unblocked")
                 setUsers(prev => prev.map(user => user.id === id ? { ...user, isActive: true } : user));
